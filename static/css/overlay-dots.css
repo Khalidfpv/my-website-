@@ -1,0 +1,142 @@
+/* Floating Menu Button Styles */
+.floating-menu-btn {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(17, 17, 17, 0.8);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-menu-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(17, 17, 17, 0.9);
+}
+
+.floating-menu-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.4);
+}
+
+/* Improved Overlay Navigation with transparency */
+.overlay-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0); /* Start fully transparent */
+  z-index: 9999;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out, background-color 0.5s ease;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition-delay: 0s, 0s;
+}
+
+.overlay-nav.active {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent when active */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition-delay: 0s, 0.2s;
+}
+
+.overlay-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: 0.2s;
+}
+
+.overlay-nav.active .overlay-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.overlay-link {
+  color: white;
+  text-decoration: none;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsive text size */
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: color 0.3s ease, opacity 0.5s ease, transform 0.5s ease;
+  position: relative;
+}
+
+/* Add line animation effect on hover */
+.overlay-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #e10600; /* Red accent color */
+  transition: width 0.3s ease;
+}
+
+.overlay-link:hover::after {
+  width: 100%;
+}
+
+.overlay-nav.active .overlay-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation delays for staggered appearance */
+.overlay-nav.active .overlay-link:nth-child(1) { transition-delay: 0.1s; }
+.overlay-nav.active .overlay-link:nth-child(2) { transition-delay: 0.2s; }
+.overlay-nav.active .overlay-link:nth-child(3) { transition-delay: 0.3s; }
+.overlay-nav.active .overlay-link:nth-child(4) { transition-delay: 0.4s; }
+.overlay-nav.active .overlay-link:nth-child(5) { transition-delay: 0.5s; }
+
+.overlay-link:hover {
+  color: #e10600; /* Red accent color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .overlay-link {
+      font-size: clamp(1.2rem, 6vw, 2rem);
+      margin-bottom: 0.5rem;
+  }
+  
+  .overlay-menu {
+      gap: 1.2rem;
+  }
+  
+  .floating-menu-btn {
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+  }
+}
