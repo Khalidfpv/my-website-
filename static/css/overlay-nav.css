@@ -1,0 +1,201 @@
+/* Enhanced Header & Navigation Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.4s cubic-bezier(0.5, 0, 0.25, 1), opacity 0.3s ease, background-color 0.3s ease;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+}
+
+/* Different styling for home page vs other pages */
+body.home header {
+  background-color: transparent; /* Transparent on home page */
+}
+
+body:not(.home) header {
+  background-color: #111111; /* Solid black on other pages */
+}
+
+/* When scrolled down past threshold */
+header.scrolled {
+  background-color: rgba(15, 15, 15, 0.9); /* Dark semi-transparent when scrolled */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Hide header on scroll with improved animation */
+header.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction when hidden */
+}
+
+/* Header container with proper spacing */
+.header-container {
+  padding: 20px 0;
+  transition: padding 0.3s ease, opacity 0.3s ease;
+}
+
+/* Make header more compact when scrolled */
+header.scrolled .header-container {
+  padding: 15px 0;
+}
+
+/* Enhance brand logo for better visibility */
+.brand img {
+  height: 40px;
+  transition: all 0.4s ease;
+  filter: brightness(0) invert(1); /* Make logo white by default */
+}
+
+body.home header:not(.scrolled) .brand img {
+  transform: scale(1.05); /* Slightly larger logo on home page */
+}
+
+header.scrolled .brand img {
+  height: 35px; /* Smaller logo when scrolled */
+}
+
+/* Navigation links with animated underline effect */
+.main-nav ul li a {
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.main-nav ul li a:hover {
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+/* IMPORTANT: FIX FOR RED UNDERLINE */
+/* The underline animation effect - make sure NO underline by default */
+.main-nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0; /* Start with NO underline */
+  height: 2px;
+  background-color: #e63946; /* Red accent color */
+  transition: width 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Only show underline for active state or hover */
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+  width: 100%; /* Full width underline */
+}
+
+/* Reset any other rules that might override this */
+.main-nav ul li a:not(:hover):not(.active)::after {
+  width: 0 !important; /* Force no underline for non-active, non-hover links */
+}
+
+/* Ensure the "Get Started" button stands out */
+.cta-buttons .btn-primary {
+  background-color: #e63946;
+  border: 2px solid #e63946;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-buttons .btn-primary:hover {
+  background-color: transparent;
+  color: #e63946;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+}
+
+.cta-buttons .btn-primary:active {
+  transform: translateY(-1px);
+}
+
+/* Add ripple effect to button */
+.cta-buttons .btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.cta-buttons .btn-primary:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* Fix body spacing to account for fixed header */
+body {
+  padding-top: 80px; /* Set initial padding to match header height */
+}
+
+body.home {
+  padding-top: 0; /* No padding needed for home page since header is transparent */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .header-container {
+    padding: 15px 0;
+  }
+  
+  header.scrolled .header-container {
+    padding: 12px 0;
+  }
+  
+  .brand img {
+    height: 35px;
+  }
+  
+  .main-nav ul li a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none; /* Will be replaced by overlay nav on mobile */
+  }
+}
+
+/* Accessibility - respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
