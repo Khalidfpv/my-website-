@@ -1,0 +1,266 @@
+/* Index Page Specific Styles */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    padding-top: 80px; /* Assuming header is 80px */
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 4rem; /* Specific to index hero */
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.25rem; /* Specific to index hero */
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hero-tagline {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.hero-tagline .separator {
+    margin: 0 0.75rem;
+}
+
+.check-icon {
+    margin-left: 1rem;
+    color: var(--primary);
+}
+
+/* Services Grid - Assuming this is specific to Index or significantly different */
+.services-grid {
+    background-color: var(--white);
+    padding: 4rem 0;
+}
+
+.services-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    border-top: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+}
+
+.service-item {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    transition: var(--transition);
+}
+
+.service-item:hover {
+    background-color: var(--light-gray);
+}
+
+.service-icon {
+    margin-bottom: 1rem;
+}
+
+.service-icon i {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.service-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+/* Clients Section */
+.clients {
+    text-align: center;
+    background-color: var(--light-gray);
+    padding: 4rem 0;
+}
+
+.clients h2 {
+    margin-bottom: 3rem;
+}
+
+.logo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.logo-row img {
+    height: 45px;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.logo-row img:hover {
+    opacity: 1;
+}
+
+/* Process Steps */
+.process {
+    background-color: var(--white);
+    padding: 5rem 0;
+}
+
+.process-steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.process-step {
+    text-align: center;
+    max-width: 220px;
+}
+
+.step-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #f5f5f5;
+    margin-bottom: 1rem;
+}
+
+.step-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--black);
+    border-radius: 0;
+}
+
+.step-icon i {
+    font-size: 2rem;
+}
+
+.step-arrow {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.process-step h3 {
+    margin-bottom: 0.75rem;
+}
+
+.process-step p {
+    font-size: 0.9rem;
+}
+
+/* Featured Projects */
+.featured-projects {
+    background-color: var(--light-gray);
+    padding: 5rem 0;
+}
+
+.projects-grid { /* This grid is specific to index's featured projects */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    /* .project-card styles are now in base.css */
+}
+
+.view-all-wrapper {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* CTA Banner */
+.cta-banner {
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.cta-banner h2 {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+/* Responsive Design for Index Page */
+@media (max-width: 1200px) {
+    .services-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .process-steps {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .process-step {
+        margin: 1.5rem;
+    }
+    .step-arrow {
+        transform: rotate(90deg);
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 { /* Index specific hero h1 responsive */
+        font-size: 2.5rem;
+    }
+    .services-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .projects-grid { /* If .projects-grid is only on index */
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-row {
+        grid-template-columns: 1fr;
+    }
+    .hero-tagline {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hero-tagline .separator {
+        display: none;
+    }
+}

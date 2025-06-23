@@ -1,0 +1,117 @@
+/* Portfolio Page Specific Styles */
+
+.portfolio-header {
+    margin-top: 80px; /* Assuming header is 80px */
+    background-color: var(--black);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.video-showcase {
+    padding: 3rem 0;
+    background-color: var(--light-gray);
+}
+
+.showreel {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.showreel iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.filters {
+    background-color: var(--white);
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 0; /* Overrides any base margin if section used */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.5rem;
+    background: none;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
+.filter-btn:hover:not(.active) {
+    color: var(--primary);
+}
+
+.portfolio-section {
+    padding: 3rem 0 5rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    /* Styles for individual items like .project-card or a new .portfolio-item-card
+       would go here if different from index.html's .project-card.
+       If .project-card from index.css is reused, no new styles needed here for the card itself.
+    */
+}
+
+/* Testimonials Section (if primarily on Portfolio page) */
+.testimonials {
+    background-color: var(--light-gray);
+    padding: 5rem 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial {
+    background-color: var(--white);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.testimonial .quote-icon { /* Ensure specificity if .quote-icon is used elsewhere */
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial blockquote { /* Ensure specificity */
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author h4 {
+    margin-bottom: 0.25rem;
+}
+
+/* Responsive Design for Portfolio Page */
+@media (max-width: 768px) {
+    .portfolio-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
