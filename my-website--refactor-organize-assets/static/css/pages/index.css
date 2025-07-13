@@ -1,0 +1,510 @@
+/* Homepage Specific Styles */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: var(--font-weight-heavy);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero-text p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-tagline {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    font-weight: var(--font-weight-bold);
+}
+
+.hero-tagline span {
+    margin-right: 0.5rem;
+}
+
+.separator {
+    margin: 0 0.5rem;
+}
+
+.check-icon {
+    margin-left: 0.5rem;
+    color: var(--primary);
+}
+
+/* IMPORTANT: Do not override the GET STARTED button styles here */
+/* This ensures consistency with the header button */
+
+/* Services Grid */
+.services-grid {
+    padding: 5rem 0;
+    background-color: var(--light-gray);
+}
+
+.services-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.service-item {
+    background-color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.service-item h3 {
+    font-weight: var(--font-weight-bold);
+    line-height: 1.3;
+}
+
+/* Clients Section */
+.clients {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.clients h2 {
+    margin-bottom: 3rem;
+    font-weight: var(--font-weight-bold);
+}
+
+.logo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.logo-row img {
+    height: 60px;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.logo-row img:hover {
+    opacity: 1;
+}
+
+/* Process Section */
+.process {
+    padding: 5rem 0;
+    background-color: var(--light-gray);
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.process-step {
+    text-align: center;
+    flex: 1;
+}
+
+.step-number {
+    font-size: 2rem;
+    font-weight: var(--font-weight-heavy);
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.step-icon {
+    font-size: 2rem;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+}
+
+.process-step h3 {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1rem;
+}
+
+.process-step p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.step-arrow {
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+}
+
+/* Featured Projects */
+.featured-projects {
+    padding: 5rem 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.view-all-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* CTA Banner */
+.cta-banner {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.cta-banner h2 {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-heavy);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+/* Ensure CTA buttons are consistent with header */
+.cta-banner .btn-primary {
+    background-color: var(--white);
+    color: var(--primary);
+    border: 2px solid var(--white);
+    padding: 0.75rem 1.5rem;
+    min-width: 160px;
+    font-weight: 700;
+}
+
+.cta-banner .btn-primary:hover {
+    background-color: transparent;
+    color: var(--white);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    
+    .services-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .process-steps {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .step-arrow {
+        transform: rotate(90deg);
+        margin: 1rem 0;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Keep button styles consistent with header in responsive mode */
+    .cta-banner .btn-primary {
+        padding: 0.6rem 1.2rem;
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .services-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-banner h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .logo-row {
+        gap: 2rem;
+    }
+    
+    .logo-row img {
+        height: 40px;
+    }
+}
+/* Add these styles to your existing index.css file to integrate with the loader */
+
+/* Hide page content until loader completes */
+body:not(.loader-complete) .hero {
+    opacity: 0;
+}
+
+body.loader-complete .hero {
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* Enhanced hero reveal animation after loader */
+.hero-content.hero-loaded .hero-text h1 {
+    animation: hero-title-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-content.hero-loaded .hero-text p {
+    animation: hero-subtitle-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+}
+
+.hero-content.hero-loaded .hero-tagline {
+    animation: hero-tagline-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+}
+
+.hero-content.hero-loaded .btn-primary {
+    animation: hero-button-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+}
+
+@keyframes hero-title-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hero-subtitle-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hero-tagline-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hero-button-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Ensure loader integration with existing animations */
+.page-loader ~ * {
+    pointer-events: none;
+}
+
+.page-loader.fade-out ~ * {
+    pointer-events: auto;
+}
+/* Clients Section - Enhanced for Mobile & Desktop */
+.clients {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.clients h2 {
+    margin-bottom: 3rem;
+    font-weight: var(--font-weight-bold);
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.logo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.client-logo {
+    height: 80px; /* Increased from 60px */
+    width: auto;
+    max-width: 180px; /* Increased from 150px */
+    object-fit: contain;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.client-logo:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Special handling for PNG logos to ensure they display properly */
+.client-logo[src$=".png"] {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.client-logo[src$=".png"]:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Tablet view */
+@media (max-width: 992px) {
+    .clients {
+        padding: 3rem 0;
+    }
+    
+    .clients h2 {
+        font-size: 2rem;
+    }
+    
+    .logo-row {
+        gap: 2.5rem;
+    }
+    
+    .client-logo {
+        height: 50px;
+        max-width: 130px;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .logo-row {
+        gap: 2rem;
+        padding: 0 1.5rem;
+    }
+    
+    .client-logo {
+        height: 45px;
+        max-width: 120px;
+    }
+    
+    .client-logo[src$=".png"] {
+        padding: 8px;
+    }
+}
+
+/* Small mobile view */
+@media (max-width: 480px) {
+    .clients {
+        padding: 2.5rem 0;
+    }
+    
+    .clients h2 {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+    
+    .logo-row {
+        gap: 1.5rem;
+        padding: 0 1rem;
+        justify-content: space-around;
+    }
+    
+    .client-logo {
+        height: 40px;
+        max-width: 100px;
+        flex: 0 0 calc(33.333% - 1rem);
+    }
+    
+    .client-logo[src$=".png"] {
+        padding: 6px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .logo-row {
+        gap: 1rem;
+    }
+    
+    .client-logo {
+        height: 35px;
+        max-width: 90px;
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+}

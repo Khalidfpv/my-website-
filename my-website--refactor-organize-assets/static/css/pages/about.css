@@ -1,0 +1,382 @@
+/* About Page Styles */
+
+/* Hero Section - Matching Contact Page Style */
+.about-hero-video {
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    overflow: hidden;
+    margin-top: 0; /* Remove margin to eliminate white space */
+    padding-top: 80px; /* Add padding instead to account for fixed header */
+}
+
+.about-hero-video video {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    min-width: 100%; 
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    padding-top: calc(80px + 2rem); /* Account for header height */
+}
+
+.about-hero-content {
+    max-width: 900px;
+    width: 100%;
+}
+
+.about-text-content {
+    text-align: center;
+}
+
+.about-hero-overlay h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    margin: 0 0 1.5rem 0;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero-overlay p {
+    font-size: 1.1rem;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Featured Clients Section */
+.featured-clients-section {
+    padding: 3rem 0;
+    background-color: var(--white);
+}
+
+.featured-clients-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.featured-clients-logos img {
+    height: 50px;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.featured-clients-logos img:hover {
+    opacity: 1;
+}
+
+/* Fast Facts Section */
+.fast-facts-section {
+    padding: 5rem 0;
+}
+
+.section-pad {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.fast-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.fact-card {
+    background-color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.counter {
+    font-size: 3rem;
+    font-weight: var(--font-weight-heavy);
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.fact-label {
+    font-weight: var(--font-weight-bold);
+}
+
+/* Story Section - Larger Text */
+.journey-content p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.journey-content p strong {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+/* Workflow Steps */
+.workflow-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.workflow-step {
+    text-align: center;
+    flex: 1;
+    padding: 2rem 1rem;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin: 0 1rem;
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.workflow-step h4 {
+    font-weight: var(--font-weight-bold);
+    line-height: 1.4;
+}
+
+/* Safety & Licensing */
+.licence-line {
+    text-align: center;
+    font-weight: var(--font-weight-bold);
+    font-size: 1.25rem;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+}
+
+/* BTS Carousel */
+.bts-carousel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.bts-carousel img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.bts-carousel img:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Press / Awards */
+.press-awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.pull-quote {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.pull-quote p {
+    font-size: 1.25rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.pull-quote i {
+    color: var(--primary);
+    margin-right: 0.5rem;
+}
+
+.pull-quote cite {
+    font-style: normal;
+    font-weight: var(--font-weight-bold);
+    display: block;
+    text-align: right;
+}
+
+/* CTA Section */
+.dual-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* IMPORTANT: Do not override the GET STARTED button styles here */
+/* This ensures consistency with the header button */
+
+.btn-outline-red {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 0.75rem 1.5rem;
+    min-width: 160px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.btn-outline-red:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .fast-facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .workflow-steps {
+        flex-wrap: wrap;
+    }
+    
+    .workflow-step {
+        flex: 0 0 calc(50% - 2rem);
+        margin-bottom: 2rem;
+    }
+    
+    .bts-carousel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .btn-outline-red {
+        padding: 0.6rem 1.2rem;
+        min-width: 140px;
+    }
+    
+    .journey-content p {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero-video {
+        margin-top: 70px;
+        height: 50vh;
+    }
+    
+    .about-hero-overlay h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        letter-spacing: 1px;
+    }
+    
+    .about-hero-overlay p {
+        font-size: 1rem;
+    }
+    
+    .featured-clients-logos {
+        gap: 2rem;
+    }
+    
+    .featured-clients-logos img {
+        height: 40px;
+    }
+    
+    .workflow-step {
+        flex: 0 0 100%;
+        margin: 0 0 2rem 0;
+    }
+    
+    .press-awards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dual-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .journey-content p {
+        font-size: 1.1rem;
+    }
+    
+    .journey-content p strong {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-hero-video {
+        height: 45vh;
+    }
+    
+    .about-hero-overlay {
+        padding: 1.5rem 1rem;
+    }
+    
+    .about-hero-overlay h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .about-hero-overlay p {
+        font-size: 0.95rem;
+    }
+    
+    .fast-facts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bts-carousel {
+        grid-template-columns: 1fr;
+    }
+    
+    .journey-content p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .journey-content p strong {
+        font-size: 1.05rem;
+    }
+}
+
+/* Footer styles moved to base.css for consistency */
+.cta-section h2 {
+    text-align: center;           /* keep text centred */
+    margin: 0 auto 2rem auto;     /* auto horizontal margins = centred block */
+}
