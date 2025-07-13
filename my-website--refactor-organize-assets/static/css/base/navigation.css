@@ -42,7 +42,7 @@ header.hidden {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  height: 80px;
+  height: 100px;
   position: relative;
 }
 
@@ -61,7 +61,7 @@ header.scrolled .header-container {
 }
 
 .brand img {
-  height: 70px; /* Further increased to match Sager site */
+  height: 80px; /* Further increased to match Sager site */
   transition: all 0.4s ease;
   /* Removed filter to show original colors */
 }
