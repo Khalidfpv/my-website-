@@ -1,0 +1,203 @@
+/* Updated Portfolio Page CSS - Hero Section to Match Home */
+
+/* Replace portfolio-header with Home-style hero */
+.portfolio-page .hero {
+    position: relative;
+    height: 100vh;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.portfolio-page .hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.portfolio-page .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+.portfolio-page .hero-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.portfolio-page .hero-text {
+    max-width: 650px;
+}
+
+.portfolio-page .hero-text h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-page .hero-text p {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure body has no padding for portfolio page */
+body.portfolio-page {
+    padding-top: 0 !important;
+}
+
+/* Ensure header is transparent like home page */
+body.portfolio-page header {
+    background-color: transparent;
+}
+
+/* Video Showcase Section - adjust styling */
+.video-showcase {
+    padding: 3rem 0;
+    background-color: var(--light-gray);
+}
+
+.showreel {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.showreel iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Filters Section */
+.filters {
+    background-color: var(--white);
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.5rem;
+    background: none;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
+.filter-btn:hover:not(.active) {
+    color: var(--primary);
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    padding: 3rem 0 5rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: var(--light-gray);
+    padding: 5rem 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial {
+    background-color: var(--white);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.testimonial .quote-icon {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial blockquote {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author h4 {
+    margin-bottom: 0.25rem;
+}
+
+/* Responsive Design for Portfolio Page */
+@media (max-width: 992px) {
+    .portfolio-page .hero-text h1 {
+        font-size: 3rem;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-page .hero-text h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .portfolio-page .hero-text p {
+        font-size: 1.1rem;
+    }
+    
+    .portfolio-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-page .hero-text h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .portfolio-page .hero-text p {
+        font-size: 1rem;
+    }
+}
